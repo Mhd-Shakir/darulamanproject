@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.2;
+  }
+}
+
+@layer utilities {
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/* Print styles for QR code friendly layouts */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+  
+  .print-break {
+    page-break-before: always;
+  }
+  
+  a[href]:after {
+    content: " (" attr(href) ")";
+    color: #666;
+    font-size: 0.8em;
+  }
+  
+  .bg-gradient-to-b,
+  .bg-gradient-to-br {
+    background: white !important;
+  }
+  
+  .shadow-md,
+  .shadow-lg,
+  .shadow-xl {
+    box-shadow: none !important;
+    border: 1px solid #e5e7eb !important;
+  }
+}
+
+/* Smooth scrolling and improved readability */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+button:focus,
+input:focus,
+a:focus {
+  outline: 2px solid #646a49;
+  outline-offset: 2px;
+}
+
+/* Custom selection color */
+::selection {
+  background-color: #d2d6c7;
+  color: #393c2d;
+}
